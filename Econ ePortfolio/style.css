@@ -1,0 +1,257 @@
+:root {
+  --bg: #f4f7fb;
+  --surface: #ffffff;
+  --text: #18212b;
+  --muted: #5f6c7b;
+  --border: #d8e0ea;
+  --accent: #1f4f73;
+  --accent-soft: #5f7f9a;
+  --shadow: 0 18px 40px rgba(24, 33, 43, 0.08);
+  --serif: "Libre Baskerville", Georgia, serif;
+  --sans: "Inter", Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--sans);
+  color: var(--text);
+  background:
+    radial-gradient(circle at top left, rgba(95, 127, 154, 0.12), transparent 30%),
+    var(--bg);
+  line-height: 1.7;
+}
+
+a {
+  color: inherit;
+}
+
+p {
+  margin: 0 0 1rem;
+}
+
+.site-shell {
+  width: min(1320px, calc(100% - 3rem));
+  margin: 0 auto;
+  padding: 2rem 0 4rem;
+  display: grid;
+  grid-template-columns: minmax(250px, 300px) minmax(0, 1fr);
+  gap: 4.5rem;
+}
+
+.sidebar {
+  position: relative;
+}
+
+.sidebar-inner {
+  position: sticky;
+  top: 2rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(216, 224, 234, 0.92);
+  border-radius: 28px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(12px);
+}
+
+.sidebar-kicker,
+.nav-label,
+.section-label,
+.eyebrow,
+.paper-category,
+.paper-meta {
+  margin-bottom: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.76rem;
+  color: var(--accent-soft);
+}
+
+.sidebar-title {
+  display: inline-block;
+  margin-bottom: 0.85rem;
+  font-family: var(--serif);
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.sidebar-summary {
+  margin-bottom: 1.75rem;
+  color: var(--muted);
+  font-size: 0.97rem;
+}
+
+.sidebar-nav {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.nav-group {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.nav-group a,
+.sidebar-link {
+  text-decoration: none;
+  color: var(--muted);
+  transition: color 160ms ease, transform 160ms ease;
+}
+
+.nav-group a:hover,
+.sidebar-link:hover,
+.text-link:hover,
+.paper-preview h3 a:hover {
+  color: var(--accent);
+}
+
+.sidebar-link {
+  display: inline-block;
+  margin-top: 2rem;
+  font-weight: 600;
+}
+
+.content {
+  min-width: 0;
+}
+
+.hero-block {
+  padding: 3rem 0 4rem;
+}
+
+.hero-block h1,
+.section-header h2,
+.paper-preview h3,
+.paper-entry h2 {
+  font-family: var(--serif);
+  line-height: 1.02;
+  margin: 0 0 1rem;
+  font-weight: 500;
+}
+
+.hero-block h1 {
+  max-width: 12ch;
+  font-size: clamp(3.5rem, 7vw, 6.3rem);
+  color: var(--accent);
+}
+
+.lede {
+  max-width: 42rem;
+  color: var(--muted);
+  font-size: 1.16rem;
+}
+
+.content-section {
+  padding: 2.5rem 0 0;
+}
+
+.section-header {
+  margin-bottom: 2rem;
+}
+
+.section-header h2 {
+  max-width: 18ch;
+  font-size: clamp(2rem, 4vw, 3.3rem);
+}
+
+.essay-block {
+  max-width: 52rem;
+  padding: 2rem 0 0;
+  border-top: 1px solid var(--border);
+  font-size: 1.03rem;
+}
+
+.paper-preview-list,
+.paper-archive {
+  display: grid;
+  gap: 2rem;
+}
+
+.paper-preview,
+.paper-entry {
+  padding: 1.75rem 0 0;
+  border-top: 1px solid var(--border);
+}
+
+.paper-preview h3,
+.paper-entry h2 {
+  font-size: clamp(1.6rem, 3vw, 2.5rem);
+}
+
+.paper-preview h3 a,
+.text-link {
+  text-decoration: none;
+}
+
+.paper-preview p:last-child,
+.paper-entry p {
+  max-width: 48rem;
+}
+
+.paper-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.paper-meta {
+  margin-bottom: 0.65rem;
+  text-align: right;
+}
+
+.text-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: var(--accent);
+  font-weight: 600;
+  transition: color 160ms ease;
+}
+
+code {
+  padding: 0.08rem 0.3rem;
+  border-radius: 0.35rem;
+  background: rgba(31, 79, 115, 0.09);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.9em;
+}
+
+@media (max-width: 980px) {
+  .site-shell {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    width: min(760px, calc(100% - 2rem));
+    padding-top: 1rem;
+  }
+
+  .sidebar-inner {
+    position: static;
+  }
+
+  .hero-block {
+    padding-top: 1rem;
+  }
+
+  .hero-block h1,
+  .section-header h2 {
+    max-width: none;
+  }
+
+  .paper-heading {
+    display: block;
+  }
+
+  .paper-meta {
+    text-align: left;
+  }
+}
